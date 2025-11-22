@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scholarship System</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: #007bff;
+            padding: 15px;
+            color: white;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+        }
+        .nav-links li {
+            display: inline;
+            margin-left: 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Button Section (Vertical Layout) */
+        .button-container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column; /* ✅ Stack buttons vertically */
+            align-items: center;
+            gap: 20px;
+        }
+        .btn {
+            display: block;
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            width: 200px; /* ✅ Make all buttons uniform in width */
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 15px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="logo" href="/">Scholarship System</a>
+            <ul class="nav-links">
+                <li><li>
+                    <a href="/about">About Us</a>
+                </li></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="container text-center">
+        <h1>Welcome to the Scholarship System</h1>
+        <p>Helping students access scholarships easily.</p>
+    </div>
+
+    <!-- Login & Register Buttons (Now Stacked Vertically) -->
+    <div class="button-container">
+        <a href="/login" class="btn">Login</a>
+        <a href="/register" class="btn">Register</a>
+        <a href="/admin_login" class="btn">Admin Login</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Scholarship System | All Rights Reserved
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Admin Panel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-danger" href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-primary text-center">Pending Scholarship Applications</h1>
+        <p>Debug: {{ pending_applications }}</p>  <!-- 🔥 Debugging output -->
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Scholarship Name</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in pending_applications %}
+                <tr>
+                    <td>{{ application.student_name }}</td>
+                    <td>{{ application.scholarship_name }}</td>
+                    <td>{{ application.status }}</td>
+                    <td>
+                        <form action="{{ url_for('approve_application', app_id=application.id) }}" method="POST">
+                            <button type="submit" class="btn btn-success">Approve</button>
+                        </form>
+                        
+                        <form action="{{ url_for('reject_application', app_id=application.id) }}" method="POST">
+                            <button type="submit" class="btn btn-danger">Reject</button>
+                        </form>
+
+                        
+                                    
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4" class="text-center text-danger">No pending applications found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

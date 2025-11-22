@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scholarship Schemes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Scholarships</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger" href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container mt-5">
+        <h1 class="text-primary text-center">Available Scholarship Schemes</h1>
+
+        <!-- Filter Form -->
+        <form method="POST" class="mb-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" name="name" class="form-control" placeholder="Search by scholarship name...">
+                </div>
+                <div class="col-md-4">
+                    <input type="number" name="min_cgpa" step="0.1" class="form-control" placeholder="Minimum CGPA">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Apply Filters</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Scholarship Table -->
+        <table class="table table-hover table-striped mt-4">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Minimum CGPA Required</th>
+                    <th>Deadline</th> <!-- ✅ Deadline is now included -->
+                    <th>Scholarship Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for scheme in schemes %}
+                <tr>
+                    <td>{{ scheme.name }}</td>
+                    <td>{{ scheme.description }}</td>
+                    <td>{{ scheme.eligibility }}</td>
+                    <td>{{ scheme.deadline }}</td> <!-- ✅ Keep deadline -->
+                    <td>₹{{ scheme.amount }}</td>
+                    <td>
+                        <form action="/apply/{{ scheme.id }}" method="POST">
+                            <button type="submit" class="btn btn-success">Apply</button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6" class="text-center text-danger">No scholarships available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

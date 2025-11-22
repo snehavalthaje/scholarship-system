@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#">Scholarship Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/schemes">Scholarships</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger" href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <div class="container mt-5 text-center">
+        <h1 class="text-primary fw-bold">Welcome, {{ user.name }} 👋</h1>
+        <p class="text-muted">Track your scholarship applications below.</p>
+    </div>
+
+    <!-- Scholarship Applications Section -->
+    <div class="container mt-4">
+        <div class="card shadow p-4">
+            <h2 class="text-primary">Your Scholarship Applications</h2>
+            {% if applied_scholarships %}
+                <ul class="list-group">
+                    {% for scholarship in applied_scholarships %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong class="text-dark">{{ scholarship.name }}</strong> - ₹{{ scholarship.amount }}
+                                <p class="text-muted m-0">Last Updated: {{ scholarship.updated_at }}</p>
+                            </div>
+                            <span class="badge 
+                                {% if scholarship.status == 'Approved' %}bg-success{% elif scholarship.status == 'Rejected' %}bg-danger{% else %}bg-warning{% endif %}">
+                                {{ scholarship.status }}
+                            </span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-center text-danger">No applications submitted yet.</p>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>

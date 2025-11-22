@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #333; /* Dark background for header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em; /* Large text for the main title */
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Navigation styling */
+nav {
+    background-color: #444; /* Slightly lighter background */
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Display list items inline */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Add underline when hovered */
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/* 🔥 General Styles */
+body {
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    font-family: 'Arial', sans-serif;
+}
+
+/* 🔥 Navbar */
+.navbar {
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔥 Title */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding: 30px 0;
+}
+
+/* 🔥 Scholarship Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    padding: 15px;
+    background: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* 🔥 Apply Button */
+.btn-success {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.btn-success:hover {
+    background: #28a745;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+a.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: bold;
+}
+a.back-home:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(to right, #007bff, #0056b3);
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.list-group-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.badge {
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+}
